@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --primary: #ff9900;
+        --primary-dark: #e67c00;
+        --accent: #2e8b57;
+        --bg: #fff8f0;
+        --bg-card: #fff;
+        --bg-header: #fff;
+        --text-main: #23272f;
+        --text-muted: #7c7c7c;
+        --border: #f1f1f1;
+        --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        --radius: 16px;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", Arial, sans-serif;
+        background: var(--bg);
+        min-height: 100vh;
+        color: var(--text-main);
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background: var(--bg-header);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        padding: 0.7rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+      }
+      .logo {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--primary);
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .logo-icon {
+        font-size: 2.2rem;
+        color: var(--accent);
+      }
+      nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav-link {
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+        border-radius: 8px;
+        transition: background 0.15s, color 0.15s;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        background: var(--primary);
+        color: #fff;
+      }
+      .cta-btn {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        padding: 0.7rem 1.7rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(46, 139, 87, 0.08);
+        transition: background 0.2s, color 0.2s;
+        outline: none;
+      }
+      .cta-btn:hover {
+        background: var(--primary);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">🎒</span>
+          KwikMart
+        </div>
+        <nav>
+          <a class="nav-link" href="/public/kwik.html">Feed</a>
+          <a class="nav-link active" href="../src/sell.html">Sell</a>
+          <a class="nav-link" href="../src/saved.html">Saved</a>
+          <a class="nav-link" href="../src/profile.html">Profile</a>
+        </nav>
+        <button class="cta-btn">🌞</button>
+      </div>
+    </header>
+  </body>
+</html>
