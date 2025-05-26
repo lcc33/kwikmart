@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sell on KwikMart</title>
     <style>
       :root {
         --primary: #ff9900;
@@ -91,6 +91,73 @@
         background: var(--primary);
         color: #fff;
       }
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem 1rem;
+      }
+      .sell-container {
+        background: var(--bg-card);
+        box-shadow: var(--shadow);
+        border-radius: var(--radius);
+        padding: 2rem 2.5rem;
+        max-width: 480px;
+        width: 100%;
+        margin-top: 2rem;
+      }
+      .sell-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: var(--primary-dark);
+        text-align: center;
+      }
+      .sell-form label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-main);
+      }
+      .sell-form input,
+      .sell-form textarea,
+      .sell-form select {
+        width: 100%;
+        padding: 0.7rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin-bottom: 1.2rem;
+        font-size: 1rem;
+        background: #fff;
+        resize: vertical;
+      }
+      .sell-form input[type="file"] {
+        padding: 0.3rem 0;
+        background: none;
+      }
+      .sell-form button {
+        width: 100%;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 0.9rem 0;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .sell-form button:hover {
+        background: var(--accent);
+      }
+      .success-message {
+        color: var(--accent);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -101,7 +168,7 @@
           KwikMart
         </div>
         <nav>
-          <a class="nav-link" href="/public/kwik.html">Feed</a>
+          <a class="nav-link" href="/index.html">Feed</a>
           <a class="nav-link active" href="../src/sell.html">Sell</a>
           <a class="nav-link" href="../src/saved.html">Saved</a>
           <a class="nav-link" href="../src/profile.html">Profile</a>
@@ -109,5 +176,47 @@
         <button class="cta-btn">🌞</button>
       </div>
     </header>
+    <main>
+      <div class="sell-container">
+        <div class="sell-title">List an Item for Sale</div>
+        <div class="success-message" id="successMsg">Your item has been listed!</div>
+        <form class="sell-form" id="sellForm" autocomplete="off">
+          <label for="itemName">Item Name</label>
+          <input type="text" id="itemName" name="itemName" required maxlength="60" />
+
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select category</option>
+            <option value="electronics">Electronics</option>
+            <option value="fashion">Fashion</option>
+            <option value="books">Books</option>
+            <option value="home">Home</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="price">Price ($)</label>
+          <input type="number" id="price" name="price" min="0" step="0.01" required />
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" maxlength="500" required></textarea>
+
+          <label for="image">Image</label>
+          <input type="file" id="image" name="image" accept="image/*" required />
+
+          <button type="submit">List Item</button>
+        </form>
+      </div>
+    </main>
+    <script>
+      // Simple form handler for demo purposes
+      document.getElementById('sellForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('successMsg').style.display = 'block';
+        this.reset();
+        setTimeout(() => {
+          document.getElementById('successMsg').style.display = 'none';
+        }, 2500);
+      });
+    </script>
   </body>
 </html>

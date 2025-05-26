@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Saved Items - KwikMart</title>
     <style>
       :root {
         --primary: #ff9900;
@@ -17,6 +17,12 @@
         --border: #f1f1f1;
         --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         --radius: 16px;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
       }
       body {
         margin: 0;
@@ -91,6 +97,131 @@
         background: var(--primary);
         color: #fff;
       }
+      main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        flex: 1;
+        width: 100%;
+      }
+      .saved-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: var(--primary-dark);
+      }
+      .saved-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+      .saved-card {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        border: 1px solid var(--border);
+      }
+      .saved-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 12px;
+        background: #eee;
+      }
+      .saved-card-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0.2rem 0;
+      }
+      .saved-card-price {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      .saved-card-remove {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        color: var(--primary-dark);
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0.3rem 0.7rem;
+        border-radius: 6px;
+        transition: background 0.15s;
+      }
+      .saved-card-remove:hover {
+        background: #ffe5c2;
+      }
+      .empty-state {
+        text-align: center;
+        color: var(--text-muted);
+        margin-top: 3rem;
+        font-size: 1.2rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 900px) {
+        .header-content {
+          max-width: 100%;
+          padding: 0 1rem;
+        }
+        main {
+          max-width: 100%;
+          padding: 0 1rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .header-content {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.7rem;
+        }
+        nav {
+          width: 100%;
+          gap: 0.7rem;
+        }
+        .cta-btn {
+          align-self: flex-end;
+        }
+        .saved-title {
+          font-size: 1.5rem;
+        }
+      }
+      @media (max-width: 500px) {
+        .header-content {
+          padding: 0 0.5rem;
+        }
+        .logo {
+          font-size: 1.3rem;
+        }
+        .logo-icon {
+          font-size: 1.5rem;
+        }
+        .nav-link {
+          font-size: 0.95rem;
+          padding: 0.3rem 0.7rem;
+        }
+        .cta-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.95rem;
+        }
+        main {
+          padding: 0 0.3rem;
+        }
+        .saved-list {
+          gap: 1rem;
+        }
+        .saved-card {
+          padding: 0.7rem;
+        }
+        .saved-card img {
+          height: 120px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -101,13 +232,34 @@
           KwikMart
         </div>
         <nav>
-          <a class="nav-link" href="/public/kwik.html">Feed</a>
+          <a class="nav-link" href="/index.html">Feed</a>
           <a class="nav-link" href="../src/sell.html">Sell</a>
-          <a class="nav-link  active" href="../src/saved.html">Saved</a>
+          <a class="nav-link active" href="../src/saved.html">Saved</a>
           <a class="nav-link" href="../src/profile.html">Profile</a>
         </nav>
         <button class="cta-btn">🌞</button>
       </div>
     </header>
+    <main>
+      <div class="saved-title">Saved Items</div>
+      <div class="saved-list" id="savedList">
+        <!-- Example saved items -->
+        <div class="saved-card">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Product 1" />
+          <div class="saved-card-title">Wireless Headphones</div>
+          <div class="saved-card-price">$49.99</div>
+          <button class="saved-card-remove">Remove</button>
+        </div>
+        <div class="saved-card">
+          <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80" alt="Product 2" />
+          <div class="saved-card-title">Smart Water Bottle</div>
+          <div class="saved-card-price">$19.99</div>
+          <button class="saved-card-remove">Remove</button>
+        </div>
+        <!-- Add more saved items here -->
+      </div>
+      <!-- Uncomment below for empty state -->
+      <!-- <div class="empty-state">You have no saved items yet.</div> -->
+    </main>
   </body>
 </html>

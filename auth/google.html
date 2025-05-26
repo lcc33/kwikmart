@@ -9,76 +9,124 @@
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(135deg, #00c853 0%, #009688 100%);
+      background: linear-gradient(120deg, #e0f7fa 0%, #b2ebf2 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .container {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-      padding: 2.5rem 2rem 2rem 2rem;
-      max-width: 350px;
+    .auth-card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px 0 #00bcd422;
+      padding: 2.2rem 2rem 2rem 2rem;
       width: 100%;
-      text-align: center;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      border: 1.5px solid #b2ebf2;
+      position: relative;
+      transition: box-shadow 0.2s;
     }
-    .logo {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #00c853;
-      margin-bottom: 0.5rem;
-      letter-spacing: 1px;
+    .auth-card:hover {
+      box-shadow: 0 8px 32px 0 #00bcd444;
+      border-color: #00bcd4;
     }
-    .subtitle {
-      color: #555;
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-    }
-    .google-btn {
+    .brand {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fff;
-      color: #444;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
+      margin-bottom: 1.1rem;
+    }
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 0.6rem;
+      filter: grayscale(0.2) brightness(1.1);
+    }
+    .brand-name {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #009688;
+      letter-spacing: 1.2px;
+      text-shadow: 0 1px 8px #b2ebf255;
+    }
+    .auth-title {
+      font-size: 1.08rem;
+      color: #222;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      text-shadow: 0 1px 2px #b2ebf244;
+    }
+    .google-signin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, #e0f7fa 0%, #b2ebf2 100%);
+      color: #222;
+      border: none;
+      border-radius: 7px;
       font-size: 1rem;
-      font-weight: 600;
-      padding: 0.7rem 1.2rem;
+      font-weight: 700;
+      padding: 0.8rem 1.1rem;
       cursor: pointer;
-      transition: box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      margin: 0 auto;
+      transition: 
+        background 0.16s,
+        box-shadow 0.16s,
+        transform 0.12s;
+      box-shadow: 0 2px 8px 0 #00bcd422;
+      margin-bottom: 1.5rem;
       outline: none;
+      gap: 0.6rem;
     }
-    .google-btn:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      border-color: #bdbdbd;
+    .google-signin:hover {
+      background: linear-gradient(90deg, #b2ebf2 0%, #e0f7fa 100%);
+      box-shadow: 0 4px 16px 0 #00bcd433;
+      transform: translateY(-1px) scale(1.02);
     }
-    .google-icon {
-      width: 22px;
-      height: 22px;
-      margin-right: 0.8rem;
-      vertical-align: middle;
+    .google-logo {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.6rem;
+      filter: grayscale(0.1) brightness(1.1);
     }
-    .footer {
-      margin-top: 2.5rem;
-      font-size: 0.92rem;
-      color: #888;
+    .auth-footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #009688cc;
+      letter-spacing: 0.4px;
+      font-weight: 500;
+    }
+    /* Futuristic accent line */
+    .accent-line {
+      height: 3px;
+      width: 48px;
+      background: linear-gradient(90deg, #00bcd4 0%, #009688 100%);
+      border-radius: 2px;
+      margin: 0.7rem auto 1.3rem auto;
+      opacity: 0.7;
+      box-shadow: 0 1px 8px #00bcd433;
     }
   </style>
+  <script type="module" src="main.js"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">KwikMart</div>
-    <div class="subtitle">Sign in to your account to start shopping smarter.</div>
-    <button class="google-btn" onclick=window.location.href='index.html'>
-      <img class="google-icon" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+  <div class="auth-card">
+    <div class="brand">
+      <img class="brand-logo" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="KwikMart logo">
+      <span class="brand-name">KwikMart</span>
+    </div>
+    <div class="accent-line"></div>
+    <div class="auth-title">Sign in to your account to start shopping smarter.</div>
+    <button class="google-signin">
+      <img class="google-logo" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
       Sign in with Google
     </button>
-    <div class="footer">
+    <div class="auth-footer">
       &copy; 2024 KwikMart
     </div>
   </div>

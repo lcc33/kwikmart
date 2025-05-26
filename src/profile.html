@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Profile | KwikMart</title>
     <style>
       :root {
         --primary: #ff9900;
@@ -91,6 +91,157 @@
         background: var(--primary);
         color: #fff;
       }
+
+      /* Profile Page Styles */
+      .profile-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .profile-avatar {
+        flex: 0 0 140px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        color: var(--accent);
+        box-shadow: 0 2px 8px rgba(46, 139, 87, 0.08);
+      }
+      .profile-details {
+        flex: 1 1 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .profile-details h2 {
+        margin: 0 0 0.3rem 0;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+      .profile-details p {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+      .profile-actions {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+      }
+      .profile-actions button {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.4rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .profile-actions button:hover {
+        background: var(--primary-dark);
+      }
+      .profile-listings {
+        margin-top: 2.5rem;
+      }
+      .profile-listings h3 {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+      .listings-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+      .listing-card {
+        background: var(--bg-card);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        border: 1px solid var(--border);
+      }
+      .listing-card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        background: var(--border);
+      }
+      .listing-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .listing-price {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      .listing-actions {
+        margin-top: auto;
+        display: flex;
+        gap: 0.5rem;
+      }
+      .listing-actions button {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        padding: 0.4rem 1rem;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .listing-actions button:hover {
+        background: var(--primary);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 700px) {
+        .profile-container {
+          flex-direction: column;
+          align-items: center;
+          padding: 1.2rem;
+        }
+        .profile-avatar {
+          margin-bottom: 1rem;
+        }
+        .profile-details {
+          align-items: center;
+          text-align: center;
+        }
+      }
+      @media (max-width: 500px) {
+        .header-content {
+          flex-direction: column;
+          gap: 0.7rem;
+          padding: 0 0.5rem;
+        }
+        nav {
+          gap: 0.7rem;
+        }
+        .profile-container {
+          padding: 0.7rem;
+        }
+        .listings-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -101,13 +252,61 @@
           KwikMart
         </div>
         <nav>
-          <a class="nav-link" href="/public/kwik.html">Feed</a>
-          <a class="nav-link" href="../src/sell.html">Sell</a>
-          <a class="nav-link" href="../src/saved.html">Saved</a>
-          <a class="nav-link active" href="../src/profile.html">Profile</a>
+          <a class="nav-link" href="/index.html">Feed</a>
+          <a class="nav-link" href="sell.html">Sell</a>
+          <a class="nav-link" href="saved.html">Saved</a>
+          <a class="nav-link active" href="/src/profile.html">Profile</a>
         </nav>
         <button class="cta-btn">🌞</button>
       </div>
     </header>
+    <main>
+      <section class="profile-container">
+        <div class="profile-avatar">👤</div>
+        <div class="profile-details">
+          <h2>Jane Doe</h2>
+          <p>@janedoe</p>
+          <p>Email: jane@example.com</p>
+          <div class="profile-actions">
+            <button>Edit Profile</button>
+            <button>Log Out</button>
+          </div>
+        </div>
+      </section>
+      <section class="profile-listings">
+        <div style="max-width:900px;margin:0 auto;">
+          <h3>Your Listings</h3>
+          <div class="listings-grid">
+            <div class="listing-card">
+              <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Product 1" />
+              <div class="listing-title">Vintage Backpack</div>
+              <div class="listing-price">$35</div>
+              <div class="listing-actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+            <div class="listing-card">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Product 2" />
+              <div class="listing-title">Wireless Headphones</div>
+              <div class="listing-price">$60</div>
+              <div class="listing-actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+            <div class="listing-card">
+              <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Product 3" />
+              <div class="listing-title">Mountain Bike</div>
+              <div class="listing-price">$250</div>
+              <div class="listing-actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
-</html>
+</html></div></section></div>
