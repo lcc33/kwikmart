@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="loader-container">
+      <div class="loader"></div>
+    </div>
     <header>
       <div class="header-content">
         <div class="logo">
@@ -32,9 +35,9 @@
           <a class="nav-link" href="src/saved.html">Saved</a>
           <a class="nav-link" href="src/profile.html">Profile</a>
         </nav>
-        <a href="../auth/google.html">
-          <button class="cta-btn">Get Started</button>
-        </a>
+        <button class="cta-btn" onclick=location.href=`auth/google.html`>
+          Get Started
+        </button>
       </div>
     </header>
     <section class="hero">

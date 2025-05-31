@@ -1,134 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>KwikMart - Sign In</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: linear-gradient(120deg, #e0f7fa 0%, #b2ebf2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .auth-card {
-      background: rgba(255,255,255,0.92);
-      border-radius: 16px;
-      box-shadow: 0 4px 24px 0 #00bcd422;
-      padding: 2.2rem 2rem 2rem 2rem;
-      width: 100%;
-      max-width: 340px;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      border: 1.5px solid #b2ebf2;
-      position: relative;
-      transition: box-shadow 0.2s;
-    }
-    .auth-card:hover {
-      box-shadow: 0 8px 32px 0 #00bcd444;
-      border-color: #00bcd4;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.1rem;
-    }
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      margin-right: 0.6rem;
-      filter: grayscale(0.2) brightness(1.1);
-    }
-    .brand-name {
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: #009688;
-      letter-spacing: 1.2px;
-      text-shadow: 0 1px 8px #b2ebf255;
-    }
-    .auth-title {
-      font-size: 1.08rem;
-      color: #222;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      text-shadow: 0 1px 2px #b2ebf244;
-    }
-    .google-signin {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(90deg, #e0f7fa 0%, #b2ebf2 100%);
-      color: #222;
-      border: none;
-      border-radius: 7px;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 0.8rem 1.1rem;
-      cursor: pointer;
-      transition: 
-        background 0.16s,
-        box-shadow 0.16s,
-        transform 0.12s;
-      box-shadow: 0 2px 8px 0 #00bcd422;
-      margin-bottom: 1.5rem;
-      outline: none;
-      gap: 0.6rem;
-    }
-    .google-signin:hover {
-      background: linear-gradient(90deg, #b2ebf2 0%, #e0f7fa 100%);
-      box-shadow: 0 4px 16px 0 #00bcd433;
-      transform: translateY(-1px) scale(1.02);
-    }
-    .google-logo {
-      width: 20px;
-      height: 20px;
-      margin-right: 0.6rem;
-      filter: grayscale(0.1) brightness(1.1);
-    }
-    .auth-footer {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: #009688cc;
-      letter-spacing: 0.4px;
-      font-weight: 500;
-    }
-    /* Futuristic accent line */
-    .accent-line {
-      height: 3px;
-      width: 48px;
-      background: linear-gradient(90deg, #00bcd4 0%, #009688 100%);
-      border-radius: 2px;
-      margin: 0.7rem auto 1.3rem auto;
-      opacity: 0.7;
-      box-shadow: 0 1px 8px #00bcd433;
-    }
-  </style>
-  <script type="module" src="main.js"></script>
-</head>
-<body>
-  <div class="auth-card">
-    <div class="brand">
-      <img class="brand-logo" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="KwikMart logo">
-      <span class="brand-name">KwikMart</span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>KwikMart - Sign In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        background: linear-gradient(120deg, #e0f7fa 0%, #b2ebf2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .auth-card {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 16px;
+        box-shadow: 0 4px 24px 0 #00bcd422;
+        padding: 2.2rem 2rem 2rem 2rem;
+        width: 100%;
+        max-width: 340px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        border: 1.5px solid #b2ebf2;
+        position: relative;
+        transition: box-shadow 0.2s;
+      }
+      .auth-card:hover {
+        box-shadow: 0 8px 32px 0 #00bcd444;
+        border-color: #00bcd4;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.1rem;
+      }
+      .brand-logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.6rem;
+        filter: grayscale(0.2) brightness(1.1);
+      }
+      .brand-name {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #009688;
+        letter-spacing: 1.2px;
+        text-shadow: 0 1px 8px #b2ebf255;
+      }
+      .auth-title {
+        font-size: 1.08rem;
+        color: #222;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        text-shadow: 0 1px 2px #b2ebf244;
+      }
+      .google-signin {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, #e0f7fa 0%, #b2ebf2 100%);
+        color: #222;
+        border: none;
+        border-radius: 7px;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 0.8rem 1.1rem;
+        cursor: pointer;
+        transition: background 0.16s, box-shadow 0.16s, transform 0.12s;
+        box-shadow: 0 2px 8px 0 #00bcd422;
+        margin-bottom: 1.5rem;
+        outline: none;
+        gap: 0.6rem;
+      }
+      .google-signin:hover {
+        background: linear-gradient(90deg, #b2ebf2 0%, #e0f7fa 100%);
+        box-shadow: 0 4px 16px 0 #00bcd433;
+        transform: translateY(-1px) scale(1.02);
+      }
+      .google-logo {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.6rem;
+        filter: grayscale(0.1) brightness(1.1);
+      }
+      .auth-footer {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 0.95rem;
+        color: #009688cc;
+        letter-spacing: 0.4px;
+        font-weight: 500;
+      }
+      /* Futuristic accent line */
+      .accent-line {
+        height: 3px;
+        width: 48px;
+        background: linear-gradient(90deg, #00bcd4 0%, #009688 100%);
+        border-radius: 2px;
+        margin: 0.7rem auto 1.3rem auto;
+        opacity: 0.7;
+        box-shadow: 0 1px 8px #00bcd433;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-card">
+      <div class="brand">
+        <img
+          class="brand-logo"
+          src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+          alt="KwikMart logo"
+        />
+        <span class="brand-name">KwikMart</span>
+      </div>
+      <div class="accent-line"></div>
+      <div class="auth-title">
+        Sign in to your account to start shopping smarter.
+      </div>
+      <button class="google-signin" onclick="login()">
+        <img
+          class="google-logo"
+          src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+          alt="Google logo"
+        />
+        Sign in with Google
+      </button>
+      <div class="auth-footer">&copy; 2024 KwikMart</div>
     </div>
-    <div class="accent-line"></div>
-    <div class="auth-title">Sign in to your account to start shopping smarter.</div>
-    <button class="google-signin">
-      <img class="google-logo" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
-      Sign in with Google
-    </button>
-    <div class="auth-footer">
-      &copy; 2024 KwikMart
-    </div>
-  </div>
-</body>
+    <script src="main.js" defer></script>
+  </body>
 </html>

@@ -21,7 +21,9 @@
       html {
         box-sizing: border-box;
       }
-      *, *:before, *:after {
+      *,
+      *:before,
+      *:after {
         box-sizing: inherit;
       }
       body {
@@ -161,6 +163,7 @@
         color: var(--text-muted);
         margin-top: 3rem;
         font-size: 1.2rem;
+        display: none;
       }
 
       /* Responsive Styles */
@@ -237,7 +240,6 @@
           <a class="nav-link active" href="../src/saved.html">Saved</a>
           <a class="nav-link" href="../src/profile.html">Profile</a>
         </nav>
-        <button class="cta-btn">🌞</button>
       </div>
     </header>
     <main>
@@ -245,21 +247,42 @@
       <div class="saved-list" id="savedList">
         <!-- Example saved items -->
         <div class="saved-card">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Product 1" />
+          <img
+            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+            alt="Product 1"
+          />
           <div class="saved-card-title">Wireless Headphones</div>
           <div class="saved-card-price">$49.99</div>
-          <button class="saved-card-remove">Remove</button>
+          <button class="saved-card-remove" onclick="remove()">Remove</button>
         </div>
         <div class="saved-card">
-          <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80" alt="Product 2" />
+          <img
+            src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80"
+            alt="Product 2"
+          />
           <div class="saved-card-title">Smart Water Bottle</div>
           <div class="saved-card-price">$19.99</div>
-          <button class="saved-card-remove">Remove</button>
+          <button class="saved-card-remove" onclick="remove()">Remove</button>
         </div>
         <!-- Add more saved items here -->
       </div>
       <!-- Uncomment below for empty state -->
-      <!-- <div class="empty-state">You have no saved items yet.</div> -->
+      <div class="empty-state">You have no saved items yet.</div>
     </main>
+    <script>
+      // const btn = document.querySelectorAll("saved-card-remove");
+      // const empty = document.querySelector(".empty-state");
+      // const card = document.querySelector(".saved-card");
+
+      // function remove() {
+      //   empty.style.display = "block";
+      //   card.style.display = "none";
+
+      //   // setTimeout(() => {
+      //   //   empty.style.display = "none";
+      //   //   card.style.display = "block";
+      //   // }, 1000);
+      // }
+    </script>
   </body>
 </html>
